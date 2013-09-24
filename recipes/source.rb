@@ -17,13 +17,15 @@ when "debian"
 
 end
 
-remote_file "#{Chef::Config[:file_cache_path]}/subversion-#{node[:subversion][:version]}.tar.gz" do
+#remote_file "#{Chef::Config[:file_cache_path]}/subversion-#{node[:subversion][:version]}.tar.gz" do
+remote_file "/root/subversion-#{node[:subversion][:version]}.tar.gz" do
   source "#{node[:subversion][:download_link]}/subversion-#{node[:subversion][:version]}.tar.gz"
   action :create_if_missing
 end
 
 bash "Compile subversion #{node[:subversion][:version]}" do
-  cwd Chef::Config[:file_cache_path]
+  #cwd Chef::Config[:file_cache_path]
+  cwd /root
   code <<-EOH
     tar xvzf subversion-#{node[:subversion][:version]}.tar.gz
     cd subversion-#{node[:subversion][:version]}
