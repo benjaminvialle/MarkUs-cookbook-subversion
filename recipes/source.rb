@@ -25,7 +25,7 @@ end
 
 bash "Compile subversion #{node[:subversion][:version]}" do
   #cwd Chef::Config[:file_cache_path]
-  cwd /root
+  cwd "/root"
   code <<-EOH
     tar xvzf subversion-#{node[:subversion][:version]}.tar.gz
     cd subversion-#{node[:subversion][:version]}
