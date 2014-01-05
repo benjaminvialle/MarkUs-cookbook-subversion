@@ -11,6 +11,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-default[:subversion][:version]            = "1.8.3"
+default[:subversion][:version]            = "1.8.5"
 default[:subversion][:download_link]      = "http://archive.apache.org/dist/subversion"
 default[:subversion][:ruby_sitedir]       = "/usr/local/lib/site_ruby"
